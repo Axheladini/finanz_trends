@@ -9,9 +9,7 @@
     <script src="./js/functions.js"></script>
     <link rel="stylesheet" href="./dist/sce-main.css">
     <link rel="icon" href="./media/favicon.svg">
-    <title>
-      
-    </title>
+    <title>Finanz trends</title>
   </head>
   <body>
     <div class="container">
@@ -42,23 +40,32 @@
           </div>
         </nav>
        <!-- Grid starts here -->
-       <div class="fixed-grid has-4-cols">
-        <div class="grid">
-          <div class="cell">Cell 1</div>
-          <div class="cell">Cell 2</div>
-          <div class="cell">Cell 3</div>
-          <div class="cell">Cell 4</div>
-          <div class="cell">Cell 5</div>
-          <div class="cell">Cell 6</div>
-          <div class="cell">Cell 7</div>
-          <div class="cell">Cell 8</div>
-          <div class="cell">Cell 9</div>
-          <div class="cell">Cell 10</div>
-          <div class="cell">Cell 11</div>
-          <div class="cell">Cell 12</div>
+        <div class="fixed-grid has-2-cols candle-grid-holder">
+
+          <div id="loading-holder">
+            <img src="./media/loading.gif" id="loading">
+          </div>
+          
+
+          <div id="pagination">
+            <div id="next" class="not-clickable next-prev-button">next</div>
+            <div id="prev" class="not-clickable next-prev-button">prev</div>
+          </div>
         </div>
-      </div>
        <!-- Grid ends here -->
+        <footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
+      The source code is licensed
+      <a href="https://opensource.org/license/mit">MIT</a>. The
+      website content is licensed
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//"
+        >CC BY NC SA 4.0</a
+      >.
+    </p>
+  </div>
+</footer>
     </div>
   </body>
 </html>

@@ -1,8 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import '../../node_modules/bulma/sass/base/animations.scss';
+@import '../../node_modules/bulma/sass/base/generic.scss';
+@import '../../node_modules/bulma/sass/base/minireset.scss';
+@import '../../node_modules/bulma/sass/base/skeleton.scss';
+@import '../../node_modules/bulma/sass/utilities/controls.scss';
+@import '../../node_modules/bulma/sass/utilities/css-variables.scss';
+@import '../../node_modules/bulma/sass/utilities/derived-variables.scss';
+@import '../../node_modules/bulma/sass/utilities/extends.scss';
+@import '../../node_modules/bulma/sass/utilities/functions.scss';
+@import '../../node_modules/bulma/sass/utilities/initial-variables.scss';
+@import '../../node_modules/bulma/sass/utilities/mixins.scss';
 @import '../../node_modules/bulma/sass/components/navbar.scss';
 @import '../../node_modules/bulma/sass/layout/container.scss';
 @import '../../node_modules/bulma/sass/layout/footer.scss';
 @import '../../node_modules/bulma/sass/grid/index';
+@import '../../node_modules/bulma/sass/components/card.scss';
+
+$LightgreyColor: #f6f6f6;
+$primaryColor: #4769e6;
 
 body{
     font-family: "Raleway", sans-serif;
@@ -10,7 +25,61 @@ body{
     font-weight: 400;
     font-style: normal;
 }
+.menu-active, .navbar-item:hover{ background-color: $LightgreyColor !important;}
 
-.grid_holder{
-    width: 60%;
+.candle-grid-holder{
+    width: 30%;
+    margin-top: 30px;
+    background: $LightgreyColor;
+    padding: 12px;
+    font-size: 12px;
+    font-weight: 400;
+}
+.fixed-grid{
+    .grid{
+        padding: 12px;
+        background: white;
+        border-bottom: 1px solid white;
+        margin-bottom: 10px;
+        .cell{
+            border-bottom: 1px solid #cccccc;
+        }
+    }
+}
+
+#loading-holder{ 
+    display: none;  
+    width: 100% !important;
+    height: auto;
+    text-align: center;
+    #loading{
+        position: relative;
+        width: 30px;
+    }
+}
+.next-prev-button{
+    cursor: pointer;
+    padding: 7px;
+    display: inline-block;
+    
+}
+#next{ float:right;}
+#prev{ float:left;}
+
+.not-clickable{
+    color: #9c9797;
+    background: #f6f6f6;
+    pointer-events:none;
+    border: 1px solid #cccccc;
+}
+
+.clickable{
+    color: $primaryColor;
+    background: white;
+    pointer-events:all;
+    border: 1px solid $primaryColor;
+}
+.clickable:hover{
+    background: $primaryColor !important;
+    color: white;
 }

@@ -30,13 +30,13 @@ $app->get('/candle', function (Request $request, Response $response, $args) {
     }else{
         /* Assign Json Object to the Response */
         $response->getBody()->write($candle_payload);
-        $status_code = 200; /* Set status to 409 */
+        $status_code = 200; /* Set status to 200 */
       
     }
     /* Json Response ready */
     return $response
         ->withHeader('Content-Type', 'application/json')
-        ->withHeader('Access-Control-Allow-Origin', 'http://localhost:8080')
+        ->withHeader('Access-Control-Allow-Origin', 'http://localhost:9090')
         ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
         ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
         ->withStatus($status_code);
@@ -58,14 +58,14 @@ $app->get('/exchange', function (Request $request, Response $response, $args) {
     }else{
         /* Assign Json Object to the Response */
         $response->getBody()->write($exchange_payload);
-        $status_code = 200; /* Set status to 409 */
+        $status_code = 200; /* Set status to 200 */
       
     }
     /* Json Response ready */
     return $response
         ->withHeader('Content-Type', 'application/json')
         ->withHeader('Content-Type', 'application/json')
-        ->withHeader('Access-Control-Allow-Origin', 'http://localhost:8080')
+        ->withHeader('Access-Control-Allow-Origin', 'http://localhost:9090/')
         ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
         ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
         ->withStatus($status_code);
@@ -94,7 +94,7 @@ $app->get('/metadata', function (Request $request, Response $response, $args) {
     return $response
         ->withHeader('Content-Type', 'application/json')
         ->withHeader('Content-Type', 'application/json')
-        ->withHeader('Access-Control-Allow-Origin', 'http://localhost:8080')
+        ->withHeader('Access-Control-Allow-Origin', 'http://localhost:9090')
         ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
         ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
         ->withStatus($status_code);
