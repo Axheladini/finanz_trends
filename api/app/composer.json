@@ -6,6 +6,6 @@
         "nyholm/psr7-server": "^1.1",
         "guzzlehttp/psr7": "^1",
         "sapphirecat/slim4-http-interop-adapter": "^1.1",
-        "laminas/laminas-diactoros": "^2.17"
+        "laminas/laminas-diactoros": "^2.19"
     }
 }
