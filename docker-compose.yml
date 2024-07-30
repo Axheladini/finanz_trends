@@ -7,13 +7,13 @@ services:
 #---------------------- Backend----------------------------# 
 #- PHP and Nginx                                           #
 #----------------------------------------------------------#
-  backend:
-    container_name: backend
+  api:
+    container_name: api
     build: 
-      context: ./backend
+      context: ./api
       dockerfile: Dockerfile
     volumes:
-      - ./backend/app:/var/www
+      - ./api/app:/var/www
     ports:
       - "9000:80"
     working_dir: /var/www

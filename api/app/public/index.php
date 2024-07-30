@@ -15,6 +15,7 @@ $app->get('/', function (Request $request, Response $response, $args) {
     return $response;
 });
 
+/*The candle endpoint */
 $app->get('/candle', function (Request $request, Response $response, $args) {
     
     /*Check if candle.json file is avaliable */
@@ -29,6 +30,31 @@ $app->get('/candle', function (Request $request, Response $response, $args) {
     }else{
         /* Assign Json Object to the Response */
         $response->getBody()->write($candle_payload);
+        $status_code = 200; /* Set status to 409 */
+      
+    }
+    /* Json Response ready */
+    return $response
+        ->withHeader('Content-Type', 'application/json')
+        ->withStatus($status_code);
+   
+});
+
+/*The exchange endpoint */
+$app->get('/exchange', function (Request $request, Response $response, $args) {
+    
+    /*Check if candle.json file is avaliable */
+    if(($exchange_payload = @file_get_contents(__DIR__ . '/../storage/exchange.json')) === false){
+        
+        /* If file missing prepare a Json error responde */
+        $missing_file = array('success' => 'false', 'message' => "exchange.json file not avaliable!");
+        $missing_file_payload = json_encode($missing_file);
+        $response->getBody()->write($missing_file_payload);
+        $status_code = 409;/* Set status to 409 */
+
+    }else{
+        /* Assign Json Object to the Response */
+        $response->getBody()->write($exchange_payload);
         $status_code = 200; /* Set status to 409 */
       
     }
