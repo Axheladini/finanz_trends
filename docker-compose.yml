@@ -1,9 +1,20 @@
 version: "3.8"
 
 networks: 
-  rrenja:
+  first:
 
 services:
+#---------------------- Frontend -------------------------# 
+#- Vue.js Frontend                                        #
+#---------------------------------------------------------#
+  dashboard:
+    build: ./dashboard
+    ports:
+      - 9090:80
+    volumes:
+      - ./dashboard/public:/usr/share/nginx/html/
+    networks:
+      - first
 #---------------------- Backend----------------------------# 
 #- PHP and Nginx                                           #
 #----------------------------------------------------------#
@@ -18,5 +29,5 @@ services:
       - "9000:80"
     working_dir: /var/www
     networks:
-      - rrenja
+      - first
 

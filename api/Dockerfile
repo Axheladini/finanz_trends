@@ -55,9 +55,6 @@ COPY php.ini /usr/local/etc/php/conf.d/app.ini
 COPY nginx.conf /etc/nginx/sites-enabled/default
 COPY supervisor.conf /etc/supervisord.conf
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
-#COPY run.sh /var/docker/run.sh
-
-#RUN chmod +x /var/docker/run.sh
 
 # PHP Error Log Files
 RUN mkdir /var/log/php

@@ -1,0 +1,30 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "test app",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --watch --mode development",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "lint": "eslint ."
+  },
+  "author": "Agon Xheladini",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^5.2.6",
+    "grunt": "^1.4.0",
+    "grunt-cli": "^1.4.2",
+    "grunt-contrib-compress": "^2.0.0",
+    "mini-css-extract-plugin": "^1.6.0",
+    "sass-loader": "^10.0.5",
+    "style-loader": "^2.0.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-fix-style-only-entries": "^0.6.1"
+  },
+  "dependencies": {
+    "bulma": "^1.0.2",
+    "sass": "^1.34.0"
+  }
+}

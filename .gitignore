@@ -1,2 +1,4 @@
 api/app/vendor/*
+dashboard/public/node_modules*
+
 

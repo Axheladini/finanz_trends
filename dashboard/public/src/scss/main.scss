@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import '../../node_modules/bulma/sass/components/navbar.scss';
+@import '../../node_modules/bulma/sass/layout/container.scss';
+@import '../../node_modules/bulma/sass/layout/footer.scss';
+@import '../../node_modules/bulma/sass/grid/index';
+
+body{
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.grid_holder{
+    width: 60%;
+}
