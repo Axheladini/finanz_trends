@@ -1,0 +1,22 @@
+version: "3.8"
+
+networks: 
+  rrenja:
+
+services:
+#---------------------- Backend----------------------------# 
+#- PHP and Nginx                                           #
+#----------------------------------------------------------#
+  backend:
+    container_name: backend
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend/app:/var/www
+    ports:
+      - "9000:80"
+    working_dir: /var/www
+    networks:
+      - rrenja
+
