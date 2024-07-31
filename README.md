@@ -10,7 +10,7 @@ Author: [Agon Xheladini](agonxheladini001@gmail.com)
 <code><img width="50" src="https://user-images.githubusercontent.com/25181517/117207330-263ba280-adf4-11eb-9b97-0ac5b40bc3be.png" alt="Docker" title="Docker"/></code>
 
 + Developed with: Windows 11 OS
-+ Tested with: 
+#### Tested with: 
  + Chrome Version 127.0.6533.73 (Official Build) (64-bit)
  + Microsoft Edge Version 127.0.2651.74 (Official build) (64-bit)
  + Firefox 128.0.3 (64-bit)
