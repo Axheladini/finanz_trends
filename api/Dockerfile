@@ -56,7 +56,7 @@ COPY supervisor.conf /etc/supervisord.conf
 
 COPY ./app ./
 
-# INSTALL YOUR DEPENDENCIES
+# Install dependencies
 RUN composer install
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
