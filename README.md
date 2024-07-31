@@ -18,14 +18,14 @@ Author: [Agon Xheladini](agonxheladini001@gmail.com)
 
 ## Project setup instructions
 
-#### 1. Pull the repository to your local machine: 
+#### 1. Pull the repository to your local machine:
 + https://github.com/Axheladini/finanz_trends.git
 
 #### 2. I assume you have docker up and running. Point to the directory where you pulled the repository:
-
 ```shell script
 docker-compose up -d
 ```
+
 #### 3. Wait for the above command to completely execute and than open
 
 [http://localhost:9090/](http://localhost:9090/)
