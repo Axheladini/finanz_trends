@@ -11,9 +11,9 @@ Author: [Agon Xheladini](agonxheladini001@gmail.com)
 
 + Developed with: Windows 11 OS
 + Tested with: 
-           + Chrome Version 127.0.6533.73 (Official Build) (64-bit)
-           + Microsoft Edge Version 127.0.2651.74 (Official build) (64-bit)
-           + Firefox 128.0.3 (64-bit)
+ + Chrome Version 127.0.6533.73 (Official Build) (64-bit)
+ + Microsoft Edge Version 127.0.2651.74 (Official build) (64-bit)
+ + Firefox 128.0.3 (64-bit)
 
 ## Project setup instructions
 
