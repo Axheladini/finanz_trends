@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":[]}
+{"version":1,"defects":{"FirstTest::testGetFirst":5,"FirstTest::testCandleEndpoint":4,"FirstTest::testExchangeEndpoint":4,"FirstTest::testMetadataEndpoint":4},"times":{"FirstTest::testGetFirst":0.71,"FirstTest::testCandleEndpoint":1.61,"FirstTest::testExchangeEndpoint":0.943,"FirstTest::testMetadataEndpoint":0.541}}

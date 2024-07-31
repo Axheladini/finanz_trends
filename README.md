@@ -11,5 +11,4 @@ Author: [Agon Xheladini](agonxheladini001@gmail.com)
 
 ## Project setup instructions
 
-
 ## Code explained

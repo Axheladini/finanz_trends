@@ -5,7 +5,7 @@ networks:
 
 services:
 #---------------------- Frontend -------------------------# 
-#- Vue.js Frontend                                        #
+#- Jquery Frontend                                       #
 #---------------------------------------------------------#
   dashboard:
     build: ./dashboard
