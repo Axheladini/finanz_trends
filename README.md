@@ -26,5 +26,8 @@ Author: [Agon Xheladini](agonxheladini001@gmail.com)
 ```shell script
 docker-compose up -d
 ```
+#### Wait for the above command to completely execute and than open
+
+[http://localhost:9090/](http://localhost:9090/)
 
 ## Code explained
