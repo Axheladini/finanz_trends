@@ -6356,6 +6356,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  background: #D2D9E2;
 }
 
 .navbar {
@@ -6366,17 +6367,77 @@ body {
   width: 100%;
 }
 
+@media screen and (max-width: 500px) {
+  .navbar-brand .navbar-item {
+    padding: 0.2rem 0.3rem;
+  }
+}
+@media screen and (max-width: 1020px) {
+  .navbar-brand .navbar-item img {
+    width: 160px !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .navbar-brand .navbar-item img {
+    width: 120px !important;
+  }
+}
+
+.navbar-menu {
+  font-size: 2vh !important;
+}
+@media screen and (max-width: 1020px) {
+  .navbar-menu {
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  .navbar-menu {
+    font-size: 10px;
+    font-size: 2vh !important;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .navbar, .navbar-menu, .navbar-start, .navbar-end {
+    align-items: stretch;
+    display: flex;
+  }
+}
+
 .menu-active, .navbar-item:hover {
   background-color: #f6f6f6 !important;
 }
 
+.main-container {
+  margin-top: 75px !important;
+  margin-left: 0px !important;
+}
+
 .candle-grid-holder {
-  width: 30%;
+  width: 96%;
+  margin-left: 2%;
   margin-top: 30px;
   background: #f6f6f6;
   padding: 12px;
   font-size: 12px;
   font-weight: 400;
+}
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+  .candle-grid-holder {
+    width: 50% !important;
+  }
+}
+@media only screen and (min-width: 801px) and (max-width: 1020px) {
+  .candle-grid-holder {
+    width: 40% !important;
+  }
+}
+@media only screen and (min-width: 1021px) and (max-width: 4000px) {
+  .candle-grid-holder {
+    width: 30% !important;
+  }
 }
 
 .fixed-grid .grid {
@@ -6386,11 +6447,18 @@ body {
   margin-bottom: 10px;
 }
 .fixed-grid .grid .cell {
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #f6f6f6;
+}
+
+.loading-not-visible {
+  display: none !important;
+}
+
+.loading-visible {
+  display: inline-block !important;
 }
 
 #loading-holder {
-  display: none;
   width: 100% !important;
   height: auto;
   text-align: center;
@@ -6415,7 +6483,7 @@ body {
 }
 
 .not-clickable {
-  color: #9c9797;
+  color: #D2D9E2;
   background: #f6f6f6;
   pointer-events: none;
   border: 1px solid #cccccc;
