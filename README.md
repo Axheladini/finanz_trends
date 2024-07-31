@@ -1,5 +1,5 @@
 # Finanze trends
- Test project after interview.
+Test project from the hiring process.
 Author: [Agon Xheladini](agonxheladini001@gmail.com)
 
 ## Techstack
@@ -8,6 +8,11 @@ Author: [Agon Xheladini](agonxheladini001@gmail.com)
 <code><img width="50" src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png" alt="JavaScript" title="JavaScript"/></code>
 <code><img width="50" src="https://user-images.githubusercontent.com/25181517/183570228-6a040b9f-3ddf-47a2-a201-743121dac664.png" alt="php" title="php"/></code>
 <code><img width="50" src="https://user-images.githubusercontent.com/25181517/117207330-263ba280-adf4-11eb-9b97-0ac5b40bc3be.png" alt="Docker" title="Docker"/></code>
+
++ JQuery 3.7.1
++ PHP 8.0.30
++ Docer 4.26.0 (for windows)
++ sass 1.34.0
 
 #### Developed under OS: 
  + Windows 11 OS
@@ -18,7 +23,31 @@ Author: [Agon Xheladini](agonxheladini001@gmail.com)
 
 ## Project setup instructions
 
-#### Pull the repository to your local machine: 
+#### 1. Pull the repository to your local machine:
 + https://github.com/Axheladini/finanz_trends.git
 
+<<<<<<< HEAD
 ## Code explained
+=======
+#### 2. I assume you have docker up and running. Point to the directory where you pulled the repository:
+```shell script
+docker-compose up -d
+```
+
+#### 3. Wait for the above command to completely execute and than open:
+
+[http://localhost:9090/](http://localhost:9090/)
+
+## PHPUnit
++ Tests can be found under the **api** container. Since Slim4 PHP comes with composer and vendor I have used this framework for testings.
++ Enter the  **api** container and point to the directory: **/var/www/**
++ Test functions can be found at **/var/www/tests/FirstTest.php** (Currently three test with total 9 assertions)
++ To run the tests, point to **/var/www/** and type the command:
+```shell script
+composer test
+```
+## Images
+![img 01](https://i.postimg.cc/7xs2dDjn/ft01.png)
+![img 02](https://i.postimg.cc/xfBbj5fk/ft02.png)
+
+>>>>>>> 413e8bc1d89db42ad234085649acd00273f0472f
