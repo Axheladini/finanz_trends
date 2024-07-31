@@ -11,8 +11,8 @@ services:
     build: ./dashboard
     ports:
       - 9090:80
-    volumes:
-      - ./dashboard/public:/usr/share/nginx/html/
+   # volumes:
+   #  - ./dashboard/public:/usr/share/nginx/html/
     networks:
       - first
 #---------------------- Backend----------------------------# 
@@ -23,8 +23,8 @@ services:
     build: 
       context: ./api
       dockerfile: Dockerfile
-    volumes:
-      - ./api/app:/var/www
+    #volumes:
+    #  - ./api/app:/var/www
     ports:
       - "9000:80"
     working_dir: /var/www

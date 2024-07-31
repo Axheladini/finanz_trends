@@ -50,10 +50,15 @@ RUN apt-get -y install --fix-missing \
 # Install supervisor
 RUN apt-get install -y supervisor
 
-
 COPY php.ini /usr/local/etc/php/conf.d/app.ini
 COPY nginx.conf /etc/nginx/sites-enabled/default
 COPY supervisor.conf /etc/supervisord.conf
+
+COPY ./app ./
+
+# INSTALL YOUR DEPENDENCIES
+RUN composer install
+
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
 # PHP Error Log Files
