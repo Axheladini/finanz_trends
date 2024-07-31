@@ -35,7 +35,7 @@ docker-compose up -d
 + Enter the  **api** container and point to this directory: **/var/www/**
 + Test functions cand be found under **/var/www/tests/FirstTest.php** (Currently three test with total 9 assertions)
 + To run the tests, point to **/var/www/** and type the command:
-  ```shell script
+```shell script
 composer test
 ```
 
