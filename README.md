@@ -31,14 +31,14 @@ Author: [Agon Xheladini](agonxheladini001@gmail.com)
 docker-compose up -d
 ```
 
-#### 3. Wait for the above command to completely execute and than open
+#### 3. Wait for the above command to completely execute and than open:
 
 [http://localhost:9090/](http://localhost:9090/)
 
 ## PHPUnit
-+ Tests are unde the **api** container. Since Slim4 PHP comes with composer and vendor I have used this framework for testings.
-+ Enter the  **api** container and point to this directory: **/var/www/**
-+ Test functions cand be found under **/var/www/tests/FirstTest.php** (Currently three test with total 9 assertions)
++ Tests can be found under the **api** container. Since Slim4 PHP comes with composer and vendor I have used this framework for testings.
++ Enter the  **api** container and point to the directory: **/var/www/**
++ Test functions can be found at **/var/www/tests/FirstTest.php** (Currently three test with total 9 assertions)
 + To run the tests, point to **/var/www/** and type the command:
 ```shell script
 composer test
