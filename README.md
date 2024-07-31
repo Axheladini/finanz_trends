@@ -21,10 +21,4 @@ Author: [Agon Xheladini](agonxheladini001@gmail.com)
 #### Pull the repository to your local machine: 
 + https://github.com/Axheladini/finanz_trends.git
 
-#### I assume you have docker up and running. Point to the directory where you pulled the repository:
-
-```shell script
-docker-compose up -d
-```
-
 ## Code explained
