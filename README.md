@@ -30,4 +30,12 @@ docker-compose up -d
 
 [http://localhost:9090/](http://localhost:9090/)
 
-## Code explained
+## PHPUnit
++ Tests are unde the **api** container. Since Slim4 PHP comes with composer and vendor I have used this framework for testings.
++ Enter the  **api** container and point to this directory: **/var/www/**
++ Test functions cand be found under **/var/www/tests/FirstTest.php** (Currently three test with total 9 assertions)
++ To run the tests, point to **/var/www/** and type the command:
+  ```shell script
+composer test
+```
+
