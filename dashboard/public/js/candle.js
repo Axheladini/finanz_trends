@@ -40,7 +40,7 @@ $(function(){
                     currentCandles.push(candles[i]);
                     // End of the loop
                     if(i == Number(perPage)-Number(1)){
-                       renderCandles(currentCandles);
+                        renderItems(currentCandles);
                        pageCounter();
                        $("#loading-holder").removeClass(" loading-visible ").addClass(" loading-not-visible ");
                        $("#next").removeClass(" not-clickable ").addClass(" clickable ");
@@ -58,7 +58,7 @@ $(function(){
     /*--------------------------------------------------*/
     /*function to render the Array Candels for each page*/
 
-    function renderCandles(candles){
+    function renderItems(candles){
     
         $.each(candles, function(key,value) {
             $( ".candle-grid-holder" ).prepend( `<div class='grid'>
@@ -120,7 +120,7 @@ $(function(){
                 pageCounter();
 
                 //Render page items to the interface
-                renderCandles(currentCandles);
+                renderItems(currentCandles);
                 var nextPage = currentPage + 1;
                 //Disable next button of pagination when last page
                 if(nextPage > totalPages)
@@ -166,7 +166,7 @@ $(function(){
             if(i == l){
                 
                 //Render page items to the interface
-                renderCandles(currentCandles);
+                renderItems(currentCandles);
                 //Render page counter 
                 pageCounter();
 

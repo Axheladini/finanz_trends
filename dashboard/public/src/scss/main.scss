@@ -20,7 +20,7 @@
 $LightgreyColor: #f6f6f6;
 $DarkGreyColor: #D2D9E2;
 $NormalGreyColor: #cccccc;
-$primaryColor: #4769e6;
+$primaryColor: #477dea;
 
 body{
     font-family: "Raleway", sans-serif;
@@ -73,6 +73,7 @@ body{
     @media only screen and (min-width:1021px) and (max-width:4000px){width: 40% !important;}
 }
 .fixed-grid{
+    
     .grid{
         padding: 12px;
         background: white;
@@ -80,7 +81,8 @@ body{
         margin-bottom: 10px;
         box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
         .cell{
-            border-bottom: 1px solid $LightgreyColor;
+            border-bottom: 1px solid rgba(71, 125, 234, .1);
+            
         }
     }
 }
@@ -139,7 +141,7 @@ body{
     width: 96% !important;
     .hero-body{
         .title{font-size: 19px; font-weight: 500;}
-        .subtitle{font-size: 14px; font-weight: 400;}
+        .subtitle{font-size: 14px; font-weight: 400; color: $primaryColor;}
     }
 }
 .footer{

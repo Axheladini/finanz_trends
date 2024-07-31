@@ -63,12 +63,12 @@ $(function(){
             $( ".candle-grid-holder" ).prepend( `<div class='grid'>
             <div class='cell'>ID</div><div class='cell'>`+value._id+`</div>
             <div class='cell'>Symbol</div><div class='cell'>`+value._source.symbol+`</div>
-            <div class='cell'>Datum und Uhrzeit</div><div class='cell'>`+value._source.dateTime+`</div>
-            <div class='cell'>Highest Price</div><div class='cell'>`+value._source.highestPrice+`</div>
-            <div class='cell'>Höchster Preis</div><div class='cell'>`+value._source.lowestPrice+`</div>
-            <div class='cell'>Endpreis</div><div class='cell'>`+value._source.endPrice+`</div>
-            <div class='cell'>Quelle</div><div class='cell'>`+value._source.source+`</div>
+            <div class='cell'>Name</div><div class='cell'>`+value._source.name+`</div>
             <div class='cell'>Währung</div><div class='cell'>`+value._source.currency+`</div>
+            <div class='cell'>Namensaustausch</div><div class='cell'>`+value._source.nameExchange+`</div>
+            <div class='cell'>Code-Austausch</div><div class='cell'>`+value._source.codeExchange+`</div>
+            <div class='cell'>Virtueller Austausch</div><div class='cell'>`+value._source.virtualExchange+`</div>
+            <div class='cell'>Land</div><div class='cell'>`+value._source.country+`</div>
         </div>`);
         });
     }
