@@ -69,8 +69,8 @@ body{
     font-size: 12px;
     font-weight: 400;
     @media only screen and (min-width:600px) and (max-width:800px){width: 50% !important;}
-    @media only screen and (min-width:801px) and (max-width:1020px){width: 40% !important;}
-    @media only screen and (min-width:1021px) and (max-width:4000px){width: 30% !important;}
+    @media only screen and (min-width:801px) and (max-width:1020px){width: 45% !important;}
+    @media only screen and (min-width:1021px) and (max-width:4000px){width: 40% !important;}
 }
 .fixed-grid{
     .grid{
@@ -122,6 +122,9 @@ body{
 .clickable:hover{
     background: $primaryColor !important;
     color: white;
+}
+#pagination{
+    margin-top: 30px;
 }
 .page-counter{
     padding: 7px;

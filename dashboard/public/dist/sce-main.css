@@ -7043,12 +7043,12 @@ body {
 }
 @media only screen and (min-width: 801px) and (max-width: 1020px) {
   .candle-grid-holder {
-    width: 40% !important;
+    width: 45% !important;
   }
 }
 @media only screen and (min-width: 1021px) and (max-width: 4000px) {
   .candle-grid-holder {
-    width: 30% !important;
+    width: 40% !important;
   }
 }
 
@@ -7116,6 +7116,10 @@ body {
 .clickable:hover {
   background: #4769e6 !important;
   color: white;
+}
+
+#pagination {
+  margin-top: 30px;
 }
 
 .page-counter {

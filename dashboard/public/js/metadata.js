@@ -1,18 +1,18 @@
 $(function(){
     
     /*Get the Api link from the global variable declarations (js/globals.js)*/
-    const apiLink = globals.candleLink;
+    const apiLink = globals.metadataLink;
     
     /*The function for receiving data from candle.json*/
     getJsonData();
     
     /*Declare pagination variables */
-    var candles;
-    var candleslength;
+    var metadata;
+    var metadatalength;
     var currentPage = 1;
     var perPage = 20;
     var totalPages;
-    var currentCandles = [];
+    var tempMetadata = [];
 
 
     /*--------------------------------------------------*/
@@ -27,23 +27,31 @@ $(function(){
             success: function(response) {
 
                 // Handle the API response here
-                candles = response.hits.hits;
+                metadata = response.hits.hits;
                 // Assign the lengs of the json object to the propper parameter
-                candleslength = candles.length;
-                totalPages = Math.ceil(Number(candleslength)/Number(perPage));
+                metadatalength = metadata.length;
+                totalPages = Math.round(Number(metadatalength)/Number(perPage));
 
                 var too = Number(perPage)-Number(1);
         
                 for ( var i = 0, l = Number(perPage)-Number(1); i <= l; i++ ) {
 
-                    //currentCandles.unshift(candles[i]);
-                    currentCandles.push(candles[i]);
+                    tempMetadata.unshift(metadata[i]);
+                    //tempMetadata.push(metadata[i]);
+
                     // End of the loop
                     if(i == Number(perPage)-Number(1)){
-                       renderCandles(currentCandles);
+                  
+                       renderItems(tempMetadata);
                        pageCounter();
+
                        $("#loading-holder").removeClass(" loading-visible ").addClass(" loading-not-visible ");
                        $("#next").removeClass(" not-clickable ").addClass(" clickable ");
+
+                        //If there is only one page of items disable the next button!
+                       if(metadatalength == perPage){
+                        $("#next").removeClass(" clickable ").addClass(" not-clickable ");
+                       }
                     }
                 }
             },
@@ -58,18 +66,18 @@ $(function(){
     /*--------------------------------------------------*/
     /*function to render the Array Candels for each page*/
 
-    function renderCandles(candles){
-    
-        $.each(candles, function(key,value) {
+    function renderItems(metadata){
+
+        $.each(metadata, function(key,value) {
             $( ".candle-grid-holder" ).prepend( `<div class='grid'>
             <div class='cell'>ID</div><div class='cell'>`+value._id+`</div>
             <div class='cell'>Symbol</div><div class='cell'>`+value._source.symbol+`</div>
-            <div class='cell'>Datum und Uhrzeit</div><div class='cell'>`+value._source.dateTime+`</div>
-            <div class='cell'>Highest Price</div><div class='cell'>`+value._source.highestPrice+`</div>
-            <div class='cell'>Höchster Preis</div><div class='cell'>`+value._source.lowestPrice+`</div>
-            <div class='cell'>Endpreis</div><div class='cell'>`+value._source.endPrice+`</div>
-            <div class='cell'>Quelle</div><div class='cell'>`+value._source.source+`</div>
+            <div class='cell'>Kategorie</div><div class='cell'>`+value._source.category+`</div>
             <div class='cell'>Währung</div><div class='cell'>`+value._source.currency+`</div>
+            <div class='cell'>Isin</div><div class='cell'>`+value._source.isin+`</div>
+            <div class='cell'>Ländername</div><div class='cell'>`+value._source.countryName+`</div>
+            <div class='cell'>Aktualisiert am</div><div class='cell'>`+value._source.updatedAt+`</div>
+            <div class='cell'>Gültig bis</div><div class='cell'>`+value._source.validUntil+`</div>
         </div>`);
         });
     }
@@ -86,16 +94,16 @@ $(function(){
         $("div.grid").remove();
         
         //Empty the tem Candles Array
-        currentCandles = [];
+        tempMetadata = [];
         
         //Define next page from and to items (have in mind that the json object starts from 0)
         var from = (Number(currentPage) * Number(perPage)) - 1;
         var to = Number(from) + Number(perPage);
 
         //Define last page items if less than perPage variable
-        if(to > candleslength) {
+        if(to > metadatalength) {
            
-            lastPage = (candleslength - from)-1;
+            lastPage = (metadatalength - from)-1;
             to = from + lastPage;
         }
              
@@ -103,7 +111,8 @@ $(function(){
         for ( var i = from, l = to; i <=l; i++ ) {
         
 
-            currentCandles.push(candles[i]);
+            //tempMetadata.push(candles[i]);
+            tempMetadata.unshift(metadata[i]);
 
             //Detect and of for loop
             if(i == l){
@@ -120,7 +129,7 @@ $(function(){
                 pageCounter();
 
                 //Render page items to the interface
-                renderCandles(currentCandles);
+                renderItems(tempMetadata);
                 var nextPage = currentPage + 1;
                 //Disable next button of pagination when last page
                 if(nextPage > totalPages)
@@ -146,7 +155,7 @@ $(function(){
         currentPage--;
         
         //Empty the temp Array for page items 
-        currentCandles = [];
+        tempMetadata = [];
 
         //Show loading and empty the html interface form page items
         $("#loading-holder").removeClass(" loading-not-visible ").addClass(" loading-visible ");
@@ -159,14 +168,14 @@ $(function(){
         //Loop through json to find next page items
         for ( var i = from, l = to; i <=l; i++ ) {
 
-            //currentCandles.unshift(candles[i]);
-            currentCandles.push(candles[i]);
+            tempMetadata.unshift(metadata[i]);
+            //tempMetadata.push(metadata[i]);
             
             //Detect end of the loop
             if(i == l){
                 
                 //Render page items to the interface
-                renderCandles(currentCandles);
+                renderItems(tempMetadata);
                 //Render page counter 
                 pageCounter();
 
@@ -189,8 +198,6 @@ $(function(){
 
     function pageCounter(){
 
-        /*var currentPages = currentPage * perPage;
-        if(currentPages > candleslength){ currentPages = candleslength};*/ 
         $(".page-counter").html("<p>pages: "+totalPages+"        / current page: "+currentPage+"</p>");
 
     }

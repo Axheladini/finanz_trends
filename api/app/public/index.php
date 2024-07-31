@@ -64,8 +64,7 @@ $app->get('/exchange', function (Request $request, Response $response, $args) {
     /* Json Response ready */
     return $response
         ->withHeader('Content-Type', 'application/json')
-        ->withHeader('Content-Type', 'application/json')
-        ->withHeader('Access-Control-Allow-Origin', 'http://localhost:9090/')
+        ->withHeader('Access-Control-Allow-Origin', 'http://localhost:9090')
         ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
         ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
         ->withStatus($status_code);
@@ -92,7 +91,6 @@ $app->get('/metadata', function (Request $request, Response $response, $args) {
     }
     /* Json Response ready */
     return $response
-        ->withHeader('Content-Type', 'application/json')
         ->withHeader('Content-Type', 'application/json')
         ->withHeader('Access-Control-Allow-Origin', 'http://localhost:9090')
         ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')

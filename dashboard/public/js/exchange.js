@@ -1,18 +1,18 @@
 $(function(){
     
     /*Get the Api link from the global variable declarations (js/globals.js)*/
-    const apiLink = globals.candleLink;
+    const apiLink = globals.exchangeLink;
     
     /*The function for receiving data from candle.json*/
     getJsonData();
     
     /*Declare pagination variables */
-    var candles;
-    var candleslength;
+    var exchange;
+    var exchangelength;
     var currentPage = 1;
     var perPage = 20;
     var totalPages;
-    var currentCandles = [];
+    var tempExchange = [];
 
 
     /*--------------------------------------------------*/
@@ -27,20 +27,20 @@ $(function(){
             success: function(response) {
 
                 // Handle the API response here
-                candles = response.hits.hits;
+                exchange = response.hits.hits;
                 // Assign the lengs of the json object to the propper parameter
-                candleslength = candles.length;
-                totalPages = Math.ceil(Number(candleslength)/Number(perPage));
+                exchangelength = exchange.length;
+                totalPages = Math.ceil(Number(exchangelength)/Number(perPage));
 
                 var too = Number(perPage)-Number(1);
         
                 for ( var i = 0, l = Number(perPage)-Number(1); i <= l; i++ ) {
 
                     //currentCandles.unshift(candles[i]);
-                    currentCandles.push(candles[i]);
+                    tempExchange.unshift(exchange[i]);
                     // End of the loop
                     if(i == Number(perPage)-Number(1)){
-                       renderCandles(currentCandles);
+                       renderItems(tempExchange);
                        pageCounter();
                        $("#loading-holder").removeClass(" loading-visible ").addClass(" loading-not-visible ");
                        $("#next").removeClass(" not-clickable ").addClass(" clickable ");
@@ -56,11 +56,10 @@ $(function(){
 
 
     /*--------------------------------------------------*/
-    /*function to render the Array Candels for each page*/
-
-    function renderCandles(candles){
+    /*function to render the Array metadata for each page*/
+    function renderItems(metadata){
     
-        $.each(candles, function(key,value) {
+        $.each(metadata, function(key,value) {
             $( ".candle-grid-holder" ).prepend( `<div class='grid'>
             <div class='cell'>ID</div><div class='cell'>`+value._id+`</div>
             <div class='cell'>Symbol</div><div class='cell'>`+value._source.symbol+`</div>
@@ -77,7 +76,6 @@ $(function(){
 
     /*--------------------------------------------------------*/
     /*Function next Page for the pagination                   */
-
     $( "#next" ).on( "click", function() {
         
         //show loading when clicking next 
@@ -86,16 +84,16 @@ $(function(){
         $("div.grid").remove();
         
         //Empty the tem Candles Array
-        currentCandles = [];
+        tempExchange = [];
         
         //Define next page from and to items (have in mind that the json object starts from 0)
         var from = (Number(currentPage) * Number(perPage)) - 1;
         var to = Number(from) + Number(perPage);
 
         //Define last page items if less than perPage variable
-        if(to > candleslength) {
+        if(to > exchangelength) {
            
-            lastPage = (candleslength - from)-1;
+            lastPage = (exchangelength - from)-1;
             to = from + lastPage;
         }
              
@@ -103,7 +101,7 @@ $(function(){
         for ( var i = from, l = to; i <=l; i++ ) {
         
 
-            currentCandles.push(candles[i]);
+            tempExchange.unshift(exchange[i]);
 
             //Detect and of for loop
             if(i == l){
@@ -120,7 +118,7 @@ $(function(){
                 pageCounter();
 
                 //Render page items to the interface
-                renderCandles(currentCandles);
+                renderItems(tempExchange);
                 var nextPage = currentPage + 1;
                 //Disable next button of pagination when last page
                 if(nextPage > totalPages)
@@ -128,9 +126,7 @@ $(function(){
                     $("#next").removeClass(" clickable ").addClass(" not-clickable ");
                 }
 
-
             }
-
         }
 
     } );
@@ -139,14 +135,13 @@ $(function(){
 
     /*-------------------------------------*/
     /*Function prev page                   */
-
     $( "#prev" ).on( "click", function() {
             
         //Decrement current page
         currentPage--;
         
         //Empty the temp Array for page items 
-        currentCandles = [];
+        tempExchange = [];
 
         //Show loading and empty the html interface form page items
         $("#loading-holder").removeClass(" loading-not-visible ").addClass(" loading-visible ");
@@ -159,14 +154,14 @@ $(function(){
         //Loop through json to find next page items
         for ( var i = from, l = to; i <=l; i++ ) {
 
-            //currentCandles.unshift(candles[i]);
-            currentCandles.push(candles[i]);
+            tempExchange.unshift(exchange[i]);
+            //tempExchange.push(exchange[i]);
             
             //Detect end of the loop
             if(i == l){
                 
                 //Render page items to the interface
-                renderCandles(currentCandles);
+                renderItems(tempExchange);
                 //Render page counter 
                 pageCounter();
 
@@ -186,11 +181,8 @@ $(function(){
     
     /*-------------------------------------------*/
     /*Function to render the page counter         */
-
     function pageCounter(){
 
-        /*var currentPages = currentPage * perPage;
-        if(currentPages > candleslength){ currentPages = candleslength};*/ 
         $(".page-counter").html("<p>pages: "+totalPages+"        / current page: "+currentPage+"</p>");
 
     }
