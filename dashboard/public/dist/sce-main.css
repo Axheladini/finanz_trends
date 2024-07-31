@@ -6358,6 +6358,14 @@ body {
   font-style: normal;
 }
 
+.navbar {
+  position: fixed;
+  top: 0px;
+  background: white;
+  border-bottom: 1px solid #cccccc;
+  width: 100%;
+}
+
 .menu-active, .navbar-item:hover {
   background-color: #f6f6f6 !important;
 }

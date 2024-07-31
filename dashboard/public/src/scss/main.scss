@@ -25,6 +25,13 @@ body{
     font-weight: 400;
     font-style: normal;
 }
+.navbar{
+    position: fixed;
+    top: 0px;
+    background: white;
+    border-bottom: 1px solid #cccccc;
+    width: 100%;
+}
 .menu-active, .navbar-item:hover{ background-color: $LightgreyColor !important;}
 
 .candle-grid-holder{
