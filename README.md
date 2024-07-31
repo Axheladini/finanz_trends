@@ -26,9 +26,6 @@ Author: [Agon Xheladini](agonxheladini001@gmail.com)
 #### 1. Pull the repository to your local machine:
 + https://github.com/Axheladini/finanz_trends.git
 
-<<<<<<< HEAD
-## Code explained
-=======
 #### 2. I assume you have docker up and running. Point to the directory where you pulled the repository:
 ```shell script
 docker-compose up -d
@@ -50,4 +47,3 @@ composer test
 ![img 01](https://i.postimg.cc/7xs2dDjn/ft01.png)
 ![img 02](https://i.postimg.cc/xfBbj5fk/ft02.png)
 
->>>>>>> 413e8bc1d89db42ad234085649acd00273f0472f
