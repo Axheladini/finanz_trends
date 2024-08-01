@@ -63,6 +63,9 @@ The structure is there the code is commented, few tweks and it becomes developme
 
 **dashboard** container holds the frontend. I have used Jquery with html and sass to completes this task, webpack is used to compile and import sass files from bulma framework. A page for eache json file, a javascript file for each page. Pagination is included for each page.
 
+After pull and build make sure **api** container has **vendor** folder inside **/var/www/** and the
+**dashboard** container has **node-modules** inside **/usr/share/nginx/html/**.
+
 In general it is an simply environment and structure. Do not hesitate to ask questions: agonxheladini001@gmail.com
 
 ## Images from the UX/UI
