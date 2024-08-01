@@ -31,6 +31,18 @@ Author: [Agon Xheladini](agonxheladini001@gmail.com)
 docker-compose up -d
 ```
 
+#### 2.1 Or separately build one after anothe the containers and afterwards bring them up
+
+```shell script
+docker-compose build api --no-cache
+```
+```shell script
+docker-compose build dashboard --no-cache
+```
+```shell script
+docker-compose up -d
+```
+
 #### 3. Wait for the above command to completely execute and than open:
 
 [http://localhost:9090/](http://localhost:9090/)
@@ -43,7 +55,17 @@ docker-compose up -d
 ```shell script
 composer test
 ```
-## Images
+## Explanation
+For better development experience we need to change a bit the structure of th yml file and bothe Docerfiles. Using volumes instead of copying all files to the proper container is more practical. 
+The structure is there the code is commented, few tweks and it becomes development ready environment. 
+
+**api** container holds the Slim4 PHP framework. I have been using it to develop api endpoints for all three .json files and also for PHPUnitests. 
+
+**dashboard** container holds the frontend. I have used Jquery with html and sass to completes this task, webpack is used to compile and import sass files from bulma framework. A page for eache json file, a javascript file for each page. Pagination is included for each page.
+
+In general it is an simply environment and structure. Do not hesitate to ask questions: agonxheladini001@gmail.com
+
+## Images from the UX/UI
 ![img 01](https://i.postimg.cc/7xs2dDjn/ft01.png)
 ![img 02](https://i.postimg.cc/xfBbj5fk/ft02.png)
 
